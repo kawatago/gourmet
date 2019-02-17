@@ -1,16 +1,20 @@
 <template>
     <div class="Index">
-        <el-container>
-            <el-header>head<p>aaaaaa</p></el-header>
+        <el-container class="indexContainer">
+            <el-header width=100%><Header></Header></el-header>
             <el-container>
-                <el-aside width="200px">Aside</el-aside>
-                <el-main>Main</el-main>
+                <el-aside width=20%>Aside</el-aside>
+                <el-main width=80%>Main</el-main>
             </el-container>
         </el-container>
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import Header from '@/components/header/Header'
+
+Vue.component('Header', Header)
 export default {
     name: 'Index'
 }
@@ -19,10 +23,12 @@ export default {
 <style>
 
   .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
+    background-color: red;
+    color: gray;
     text-align: center;
     line-height: 60px;
+    width:100%;
+    padding:0;
   }
   
   .el-aside {
@@ -52,4 +58,8 @@ export default {
     line-height: 320px;
   }
 
+
+  .indexContainer {
+    height: 100vh;
+  }
 </style>
