@@ -3,8 +3,8 @@
         <el-container class="indexContainer">
             <el-header width=100%><Header></Header></el-header>
             <el-container>
-                <el-aside width=20%>Aside</el-aside>
-                <el-main width=80%>Main</el-main>
+                <el-aside width=20%><Sidebar></Sidebar></el-aside>
+                <el-main width=80%><Main></Main></el-main>
             </el-container>
         </el-container>
     </div>
@@ -13,8 +13,13 @@
 <script>
 import Vue from 'vue'
 import Header from '@/components/header/Header'
+import Sidebar from '@/components/sidebar/Sidebar'
+import Main from '@/components/main/Main'
 
 Vue.component('Header', Header)
+Vue.component('Sidebar', Sidebar)
+Vue.component('Main', Main)
+
 export default {
     name: 'Index'
 }
@@ -23,7 +28,6 @@ export default {
 <style>
 
   .el-header, .el-footer {
-    background-color: red;
     color: gray;
     text-align: center;
     line-height: 60px;
@@ -32,14 +36,14 @@ export default {
   }
   
   .el-aside {
-    background-color: #D3DCE6;
+    background-color: rgb(250, 250, 250);
     color: #333;
     text-align: center;
     line-height: 200px;
   }
   
   .el-main {
-    background-color: #E9EEF3;
+    background-color: white;
     color: #333;
     text-align: center;
     line-height: 160px;
