@@ -2,6 +2,7 @@
     <div class="sidebar">
         <ul>
             <li v-on:click= "postTest">contents1</li>
+            <!-- 項目をクリックするとポストで詳細を読み込む -->
             <li>contents2</li>
             <li>contents3</li>
             <li>contents4</li>
@@ -35,6 +36,9 @@ export default {
                     console.log("there are some errors")
                     console.log(err)
                 })
+        },
+        obtainContent: function(){
+
         }
     }
 }
