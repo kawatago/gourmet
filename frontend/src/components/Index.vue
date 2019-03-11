@@ -3,10 +3,11 @@
         <el-container class="indexContainer">
             <el-header width=100%><Header></Header></el-header>
             <el-container>
-                <el-aside width=20%><Sidebar></Sidebar></el-aside>
-                <el-main width=80%><Main></Main></el-main>
+                <el-aside width=20%><Sidebar @sample="sampleIC"/></el-aside>
+                <el-main width=80% ><Main v-bind:selectedcontent="propsvalue" ></Main></el-main>
             </el-container>
         </el-container>
+        
     </div>
 </template>
 
@@ -21,7 +22,20 @@ Vue.component('Sidebar', Sidebar)
 Vue.component('Main', Main)
 
 export default {
-    name: 'Index'
+    name: 'Index',
+    data: () => {
+      return {
+        propsvalue: ""
+      }
+    },
+    methods: {
+      sampleIC(arg){
+        console.log("at Index");
+        console.log("Mainでは左側の名前でemitする");
+        this.propsvalue=arg;
+        console.log(this.propsvalue);
+      }
+    }
 }
 </script>
 
